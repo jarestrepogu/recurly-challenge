@@ -4,21 +4,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "RCUIComponents",
+    name: "RCWeaterWidget",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "RCUIComponents",
-            targets: ["RCUIComponents"]),
+            name: "RCWeaterWidget",
+            targets: ["RCWeaterWidget"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "RCUIComponents"),
+            name: "RCWeaterWidget"),
         .testTarget(
-            name: "RCUIComponentsTests",
-            dependencies: ["RCUIComponents"]
+            name: "RCWeaterWidgetTests",
+            dependencies: ["RCWeaterWidget"]
         ),
     ]
 )

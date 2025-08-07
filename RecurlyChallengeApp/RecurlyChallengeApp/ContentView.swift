@@ -30,7 +30,7 @@ struct ContentView: View {
             }
             
             if !viewModel.periods.isEmpty {
-                Text("The weater is \(viewModel.periods[0].name)")
+                Text("The weater is \(viewModel.periods[0].shortForecast)")
                     .font(.headline)
                 Text("The temperature is \(viewModel.periods[0].temperature)")
             }
@@ -43,14 +43,6 @@ struct ContentView: View {
         .padding()
     }
 }
-/*
- name
- temperature
- temperatureUnit
- temperatureTrend
- icon
- shortForecast
- */
 #Preview {
     ContentView()
 }

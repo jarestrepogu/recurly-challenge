@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F08F8AE62E456939007616FC /* RCWeaterWidget in Frameworks */ = {isa = PBXBuildFile; productRef = F08F8AE52E456939007616FC /* RCWeaterWidget */; };
 		F096544A2E45372200A207BD /* RCNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = F09654492E45372200A207BD /* RCNetworking */; };
-		F096544D2E45373500A207BD /* RCUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = F096544C2E45373500A207BD /* RCUIComponents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F096544A2E45372200A207BD /* RCNetworking in Frameworks */,
-				F096544D2E45373500A207BD /* RCUIComponents in Frameworks */,
+				F08F8AE62E456939007616FC /* RCWeaterWidget in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 			name = RecurlyChallengeApp;
 			packageProductDependencies = (
 				F09654492E45372200A207BD /* RCNetworking */,
-				F096544C2E45373500A207BD /* RCUIComponents */,
+				F08F8AE52E456939007616FC /* RCWeaterWidget */,
 			);
 			productName = RecurlyChallengeApp;
 			productReference = F096540D2E45360600A207BD /* RecurlyChallengeApp.app */;
@@ -206,7 +206,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F09654482E45372200A207BD /* XCLocalSwiftPackageReference "../RCNetworking" */,
-				F096544B2E45373500A207BD /* XCLocalSwiftPackageReference "../RCUIComponents" */,
+				F08F8AE42E456939007616FC /* XCLocalSwiftPackageReference "../RCWeaterWidget" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F096540E2E45360600A207BD /* Products */;
@@ -608,24 +608,24 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		F08F8AE42E456939007616FC /* XCLocalSwiftPackageReference "../RCWeaterWidget" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../RCWeaterWidget;
+		};
 		F09654482E45372200A207BD /* XCLocalSwiftPackageReference "../RCNetworking" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../RCNetworking;
 		};
-		F096544B2E45373500A207BD /* XCLocalSwiftPackageReference "../RCUIComponents" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../RCUIComponents;
-		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F08F8AE52E456939007616FC /* RCWeaterWidget */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RCWeaterWidget;
+		};
 		F09654492E45372200A207BD /* RCNetworking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RCNetworking;
-		};
-		F096544C2E45373500A207BD /* RCUIComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RCUIComponents;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
