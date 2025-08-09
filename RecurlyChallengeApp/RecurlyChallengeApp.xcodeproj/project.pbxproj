@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F08F8AE62E456939007616FC /* RCWeaterWidget in Frameworks */ = {isa = PBXBuildFile; productRef = F08F8AE52E456939007616FC /* RCWeaterWidget */; };
-		F08F8B0C2E456B8F007616FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08F8AED2E456A45007616FC /* WidgetKit.framework */; };
-		F08F8B0D2E456B8F007616FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08F8AEF2E456A45007616FC /* SwiftUI.framework */; };
-		F08F8B182E456B92007616FC /* AppWeaterWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F08F8B0B2E456B8F007616FC /* AppWeaterWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0837A852E4669BF008D6D85 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08F8AED2E456A45007616FC /* WidgetKit.framework */; };
+		F0837A862E4669BF008D6D85 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08F8AEF2E456A45007616FC /* SwiftUI.framework */; };
+		F0837A912E4669C1008D6D85 /* WeatherWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F0837A842E4669BF008D6D85 /* WeatherWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0837A9A2E467BAC008D6D85 /* RCWeatherWidget in Frameworks */ = {isa = PBXBuildFile; productRef = F0837A992E467BAC008D6D85 /* RCWeatherWidget */; };
 		F096544A2E45372200A207BD /* RCNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = F09654492E45372200A207BD /* RCNetworking */; };
+		F0DCB6632E47DA820067E325 /* RCNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = F0DCB6622E47DA820067E325 /* RCNetworking */; };
+		F0DCB6652E47DA820067E325 /* RCWeatherWidget in Frameworks */ = {isa = PBXBuildFile; productRef = F0DCB6642E47DA820067E325 /* RCWeatherWidget */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F08F8B162E456B92007616FC /* PBXContainerItemProxy */ = {
+		F0837A8F2E4669C1008D6D85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F09654052E45360600A207BD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F08F8B0A2E456B8F007616FC;
-			remoteInfo = AppWeaterWidgetExtension;
+			remoteGlobalIDString = F0837A832E4669BF008D6D85;
+			remoteInfo = WeatherWidgetExtension;
 		};
 		F096541C2E45360800A207BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -45,7 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F08F8B182E456B92007616FC /* AppWeaterWidgetExtension.appex in Embed Foundation Extensions */,
+				F0837A912E4669C1008D6D85 /* WeatherWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,31 +55,33 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F0837A842E4669BF008D6D85 /* WeatherWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WeatherWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0837A962E46763E008D6D85 /* RCNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RCNetworking; path = ../RCNetworking; sourceTree = SOURCE_ROOT; };
+		F0837A982E46792C008D6D85 /* RCWeatherWidget */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RCWeatherWidget; path = ../RCWeatherWidget; sourceTree = SOURCE_ROOT; };
 		F08F8AED2E456A45007616FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F08F8AEF2E456A45007616FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		F08F8B0B2E456B8F007616FC /* AppWeaterWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppWeaterWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F096540D2E45360600A207BD /* RecurlyChallengeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecurlyChallengeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F096541B2E45360800A207BD /* RecurlyChallengeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecurlyChallengeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09654252E45360800A207BD /* RecurlyChallengeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecurlyChallengeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F08F8B192E456B92007616FC /* Exceptions for "AppWeaterWidget" folder in "AppWeaterWidgetExtension" target */ = {
+		F0837A922E4669C1008D6D85 /* Exceptions for "WeatherWidget" folder in "WeatherWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = F08F8B0A2E456B8F007616FC /* AppWeaterWidgetExtension */;
+			target = F0837A832E4669BF008D6D85 /* WeatherWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F08F8B0E2E456B8F007616FC /* AppWeaterWidget */ = {
+		F0837A872E4669BF008D6D85 /* WeatherWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				F08F8B192E456B92007616FC /* Exceptions for "AppWeaterWidget" folder in "AppWeaterWidgetExtension" target */,
+				F0837A922E4669C1008D6D85 /* Exceptions for "WeatherWidget" folder in "WeatherWidgetExtension" target */,
 			);
-			path = AppWeaterWidget;
+			path = WeatherWidget;
 			sourceTree = "<group>";
 		};
 		F096540F2E45360600A207BD /* RecurlyChallengeApp */ = {
@@ -98,12 +102,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F08F8B082E456B8F007616FC /* Frameworks */ = {
+		F0837A812E4669BF008D6D85 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F08F8B0D2E456B8F007616FC /* SwiftUI.framework in Frameworks */,
-				F08F8B0C2E456B8F007616FC /* WidgetKit.framework in Frameworks */,
+				F0DCB6652E47DA820067E325 /* RCWeatherWidget in Frameworks */,
+				F0837A862E4669BF008D6D85 /* SwiftUI.framework in Frameworks */,
+				F0837A852E4669BF008D6D85 /* WidgetKit.framework in Frameworks */,
+				F0DCB6632E47DA820067E325 /* RCNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,8 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0837A9A2E467BAC008D6D85 /* RCWeatherWidget in Frameworks */,
 				F096544A2E45372200A207BD /* RCNetworking in Frameworks */,
-				F08F8AE62E456939007616FC /* RCWeaterWidget in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,8 +142,10 @@
 		F08F8AEC2E456A45007616FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0837A962E46763E008D6D85 /* RCNetworking */,
 				F08F8AED2E456A45007616FC /* WidgetKit.framework */,
 				F08F8AEF2E456A45007616FC /* SwiftUI.framework */,
+				F0837A982E46792C008D6D85 /* RCWeatherWidget */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,7 +156,7 @@
 				F096540F2E45360600A207BD /* RecurlyChallengeApp */,
 				F096541E2E45360800A207BD /* RecurlyChallengeAppTests */,
 				F09654282E45360800A207BD /* RecurlyChallengeAppUITests */,
-				F08F8B0E2E456B8F007616FC /* AppWeaterWidget */,
+				F0837A872E4669BF008D6D85 /* WeatherWidget */,
 				F08F8AEC2E456A45007616FC /* Frameworks */,
 				F096540E2E45360600A207BD /* Products */,
 			);
@@ -160,7 +168,7 @@
 				F096540D2E45360600A207BD /* RecurlyChallengeApp.app */,
 				F096541B2E45360800A207BD /* RecurlyChallengeAppTests.xctest */,
 				F09654252E45360800A207BD /* RecurlyChallengeAppUITests.xctest */,
-				F08F8B0B2E456B8F007616FC /* AppWeaterWidgetExtension.appex */,
+				F0837A842E4669BF008D6D85 /* WeatherWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,26 +176,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F08F8B0A2E456B8F007616FC /* AppWeaterWidgetExtension */ = {
+		F0837A832E4669BF008D6D85 /* WeatherWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F08F8B1A2E456B92007616FC /* Build configuration list for PBXNativeTarget "AppWeaterWidgetExtension" */;
+			buildConfigurationList = F0837A932E4669C1008D6D85 /* Build configuration list for PBXNativeTarget "WeatherWidgetExtension" */;
 			buildPhases = (
-				F08F8B072E456B8F007616FC /* Sources */,
-				F08F8B082E456B8F007616FC /* Frameworks */,
-				F08F8B092E456B8F007616FC /* Resources */,
+				F0837A802E4669BF008D6D85 /* Sources */,
+				F0837A812E4669BF008D6D85 /* Frameworks */,
+				F0837A822E4669BF008D6D85 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F08F8B0E2E456B8F007616FC /* AppWeaterWidget */,
+				F0837A872E4669BF008D6D85 /* WeatherWidget */,
 			);
-			name = AppWeaterWidgetExtension;
+			name = WeatherWidgetExtension;
 			packageProductDependencies = (
+				F0DCB6622E47DA820067E325 /* RCNetworking */,
+				F0DCB6642E47DA820067E325 /* RCWeatherWidget */,
 			);
-			productName = AppWeaterWidgetExtension;
-			productReference = F08F8B0B2E456B8F007616FC /* AppWeaterWidgetExtension.appex */;
+			productName = WeatherWidgetExtension;
+			productReference = F0837A842E4669BF008D6D85 /* WeatherWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		F096540C2E45360600A207BD /* RecurlyChallengeApp */ = {
@@ -202,7 +212,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				F08F8B172E456B92007616FC /* PBXTargetDependency */,
+				F0837A902E4669C1008D6D85 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				F096540F2E45360600A207BD /* RecurlyChallengeApp */,
@@ -210,7 +220,7 @@
 			name = RecurlyChallengeApp;
 			packageProductDependencies = (
 				F09654492E45372200A207BD /* RCNetworking */,
-				F08F8AE52E456939007616FC /* RCWeaterWidget */,
+				F0837A992E467BAC008D6D85 /* RCWeatherWidget */,
 			);
 			productName = RecurlyChallengeApp;
 			productReference = F096540D2E45360600A207BD /* RecurlyChallengeApp.app */;
@@ -272,7 +282,7 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					F08F8B0A2E456B8F007616FC = {
+					F0837A832E4669BF008D6D85 = {
 						CreatedOnToolsVersion = 16.4;
 					};
 					F096540C2E45360600A207BD = {
@@ -298,8 +308,6 @@
 			mainGroup = F09654042E45360600A207BD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				F09654482E45372200A207BD /* XCLocalSwiftPackageReference "../RCNetworking" */,
-				F08F8AE42E456939007616FC /* XCLocalSwiftPackageReference "../RCWeaterWidget" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F096540E2E45360600A207BD /* Products */;
@@ -309,13 +317,13 @@
 				F096540C2E45360600A207BD /* RecurlyChallengeApp */,
 				F096541A2E45360800A207BD /* RecurlyChallengeAppTests */,
 				F09654242E45360800A207BD /* RecurlyChallengeAppUITests */,
-				F08F8B0A2E456B8F007616FC /* AppWeaterWidgetExtension */,
+				F0837A832E4669BF008D6D85 /* WeatherWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F08F8B092E456B8F007616FC /* Resources */ = {
+		F0837A822E4669BF008D6D85 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,7 +354,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F08F8B072E456B8F007616FC /* Sources */ = {
+		F0837A802E4669BF008D6D85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -377,10 +385,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F08F8B172E456B92007616FC /* PBXTargetDependency */ = {
+		F0837A902E4669C1008D6D85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F08F8B0A2E456B8F007616FC /* AppWeaterWidgetExtension */;
-			targetProxy = F08F8B162E456B92007616FC /* PBXContainerItemProxy */;
+			target = F0837A832E4669BF008D6D85 /* WeatherWidgetExtension */;
+			targetProxy = F0837A8F2E4669C1008D6D85 /* PBXContainerItemProxy */;
 		};
 		F096541D2E45360800A207BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -395,7 +403,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		F08F8B1B2E456B92007616FC /* Debug */ = {
+		F0837A942E4669C1008D6D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -404,8 +412,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3KNG2F4XC7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppWeaterWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AppWeaterWidget;
+				INFOPLIST_FILE = WeatherWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WeatherWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -414,7 +422,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jarestrepogu.RecurlyChallengeApp.AppWeaterWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = jarestrepogu.RecurlyChallengeApp.WeatherWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -424,7 +432,7 @@
 			};
 			name = Debug;
 		};
-		F08F8B1C2E456B92007616FC /* Release */ = {
+		F0837A952E4669C1008D6D85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -433,8 +441,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3KNG2F4XC7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppWeaterWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AppWeaterWidget;
+				INFOPLIST_FILE = WeatherWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WeatherWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,7 +451,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jarestrepogu.RecurlyChallengeApp.AppWeaterWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = jarestrepogu.RecurlyChallengeApp.WeatherWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -741,11 +749,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F08F8B1A2E456B92007616FC /* Build configuration list for PBXNativeTarget "AppWeaterWidgetExtension" */ = {
+		F0837A932E4669C1008D6D85 /* Build configuration list for PBXNativeTarget "WeatherWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F08F8B1B2E456B92007616FC /* Debug */,
-				F08F8B1C2E456B92007616FC /* Release */,
+				F0837A942E4669C1008D6D85 /* Debug */,
+				F0837A952E4669C1008D6D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -788,25 +796,22 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		F08F8AE42E456939007616FC /* XCLocalSwiftPackageReference "../RCWeaterWidget" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../RCWeaterWidget;
-		};
-		F09654482E45372200A207BD /* XCLocalSwiftPackageReference "../RCNetworking" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../RCNetworking;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		F08F8AE52E456939007616FC /* RCWeaterWidget */ = {
+		F0837A992E467BAC008D6D85 /* RCWeatherWidget */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = RCWeaterWidget;
+			productName = RCWeatherWidget;
 		};
 		F09654492E45372200A207BD /* RCNetworking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RCNetworking;
+		};
+		F0DCB6622E47DA820067E325 /* RCNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RCNetworking;
+		};
+		F0DCB6642E47DA820067E325 /* RCWeatherWidget */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RCWeatherWidget;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
