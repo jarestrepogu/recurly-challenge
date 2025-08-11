@@ -17,7 +17,7 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-            Button("Get Weater") {
+            Button("Get Weather") {
                 Task {
                     await viewModel.loadPeriods()
                 }

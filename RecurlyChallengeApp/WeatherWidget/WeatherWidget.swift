@@ -10,23 +10,24 @@ import SwiftUI
 import RCWeatherWidget
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+    func placeholder(in context: Context) -> ForecastEntry {
+        ForecastEntry(date: Date())
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+    func getSnapshot(in context: Context, completion: @escaping (ForecastEntry) -> ()) {
+        let entry = ForecastEntry(date: Date())
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        var entries: [ForecastEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
+        for dayOffset in 0 ..< 7 {
+            let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
+            let startOfDay = Calendar.current.startOfDay(for: entryDate)
+            let entry = ForecastEntry(date: startOfDay)
             entries.append(entry)
         }
 
@@ -39,9 +40,8 @@ struct Provider: TimelineProvider {
 //    }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct ForecastEntry: TimelineEntry {
     let date: Date
-    let emoji: String
 }
 
 struct WeatherWidgetEntryView : View {
@@ -85,6 +85,6 @@ struct WeatherWidget: Widget {
 #Preview(as: .systemSmall) {
     WeatherWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    ForecastEntry(date: .now)
+    ForecastEntry(date: .now)
 }
