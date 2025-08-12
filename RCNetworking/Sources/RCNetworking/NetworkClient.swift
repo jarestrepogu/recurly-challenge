@@ -7,18 +7,46 @@
 
 import Foundation
 
+/// Low-level HTTP client that handles network requests and response processing.
+///
+/// This class is responsible for:
+/// - Building URLs from request configurations
+/// - Making HTTP requests using URLSession
+/// - Handling response validation and error processing
+/// - Decoding response data into the expected type
+///
+/// It provides a clean abstraction over URLSession and handles common
+/// networking tasks like URL construction, header management, and error handling.
 final class NetworkClient: NetworkClientProtocol {
     // Properties
     private let session: URLSession
     private let decoder: JSONDecoder
     
     // Initialization
+    
+    /// Creates a new NetworkClient with the specified session and decoder.
+    ///
+    /// - Parameters:
+    ///   - session: The URLSession to use for network requests (defaults to .shared)
+    ///   - decoder: The JSONDecoder to use for response decoding (defaults to JSONDecoder())
     init(session: URLSession = .shared, decoder: JSONDecoder = JSONDecoder()) {
         self.session = session
         self.decoder = decoder
     }
     
     // Methods
+    
+    /// Makes an HTTP request based on the provided configuration.
+    ///
+    /// This method builds a URL from the configuration, creates an HTTP request,
+    /// executes it using URLSession, validates the response, and decodes the data
+    /// into the expected type.
+    ///
+    /// - Parameters:
+    ///   - configuration: The request configuration containing URL, method, headers, etc.
+    ///   - T: The decodable type to return
+    /// - Returns: The decoded response data
+    /// - Throws: NetworkError if the request fails or response is invalid
     func request<T>(_ configuration: RequestConfiguration) async throws -> T where T : Decodable {
         guard let url = buildURL(from: configuration) else {
             throw NetworkError.invalidURL
@@ -49,6 +77,14 @@ final class NetworkClient: NetworkClientProtocol {
         }
     }
     
+    /// Builds a URL from the request configuration.
+    ///
+    /// This method constructs a URL by combining the domain, path, and query parameters
+    /// from the configuration. It uses URLComponents to ensure proper URL encoding
+    /// and handles the various components correctly.
+    ///
+    /// - Parameter configuration: The request configuration
+    /// - Returns: The constructed URL, or nil if the URL cannot be built
     private func buildURL(from configuration: RequestConfiguration) -> URL? {
         var components = URLComponents()
         components.scheme = "https"
