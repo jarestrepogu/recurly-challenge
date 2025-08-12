@@ -67,9 +67,9 @@ struct WeatherWidgetEntryView : View {
         if entry.isUnavailable {
             // Simple unavailable state
             UnavailableWidgetView(family: family)
-        } else {
+        } else if let period = entry.period {
             // Normal weather display
-            WeatherContentWidgetView(period: entry.period!, family: family)
+            WeatherContentWidgetView(period: period, family: family)
         }
     }
 }
