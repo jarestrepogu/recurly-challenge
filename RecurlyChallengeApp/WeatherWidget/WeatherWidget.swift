@@ -116,6 +116,14 @@ struct WeatherContentWidgetView: View {
                 unit: period.temperatureUnit.rawValue, 
                 shortForecast: period.shortForecast.rawValue
             )
+#if os(tvOS)
+        case .systemExtraLarge:
+            RCWeatherWidgetExtraLarge(
+                temperature: entry.period.temperature,
+                unit: entry.period.temperatureUnit.rawValue,
+                shortForecast: entry.period.shortForecast.rawValue
+            )
+#endif
         default:
             RCWeatherWidgetMedium(
                 temperature: period.temperature, 
@@ -139,6 +147,11 @@ struct WeatherWidget: Widget {
                     .padding()
                     .background()
             }
+#elseif os(tvOS)
+        WeatherWidgetEntryView(entry: entry)
+            .padding()
+            .background()
+#endif
         }
         .configurationDisplayName("Forecast Widget")
         .description("This is a forecast widget for the Recurly Challenge!")
@@ -146,9 +159,18 @@ struct WeatherWidget: Widget {
     }
 }
 
+#if os(iOS)
 #Preview(as: .systemSmall) {
     WeatherWidget()
 } timeline: {
-    ForecastEntry(date: .now, period: nil, isUnavailable: true)
-    ForecastEntry(date: .now, period: nil, isUnavailable: false)
+    ForecastEntry(date: .now)
+    ForecastEntry(date: .now)
 }
+#elseif os(tvOS)
+#Preview(as: .systemExtraLarge) {
+    WeatherWidget()
+} timeline: {
+    ForecastEntry(date: .now)
+    ForecastEntry(date: .now)
+}
+#endif

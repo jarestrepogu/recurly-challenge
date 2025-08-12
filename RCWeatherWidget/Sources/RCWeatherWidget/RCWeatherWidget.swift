@@ -102,21 +102,58 @@ public struct RCWeatherWidgetLarge: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 240, height: 240)
                     .opacity(0.8)
-                HStack(spacing: 16) {
-                    Text("\(temperature.toString) º\(unit)")
+                Text("\(temperature.toString) º\(unit)  \(shortForecast)")
                         .font(.system(size: 90))
                         .fontWeight(.semibold)
                         .minimumScaleFactor(0.6)
-                    Text(shortForecast)
-                        .font(.system(size: 90))
-                        .fontWeight(.semibold)
-                        .minimumScaleFactor(0.6)
-                }
-                .padding()
+                        .padding()
             }
         }
     }
 }
+
+#if os(tvOS)
+public struct RCWeatherWidgetExtraLarge: View {
+    let temperature: Int
+    let unit: String
+    let shortForecast: String
+    
+    public init(temperature: Int, unit: String, shortForecast: String) {
+        self.temperature = temperature
+        self.unit = unit
+        self.shortForecast = shortForecast
+    }
+    
+    @ViewBuilder
+    public var body: some View {
+        ZStack {
+            Color(.systemBlue)
+                .opacity(0.25)
+            VStack(alignment: .center, spacing: 16) {
+                Image(systemName: "cloud.sun")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 120)
+                    .opacity(0.8)
+                
+                HStack(spacing: 8) {
+                    Text(temperature.toString)
+                        .font(.system(size: 120))
+                        .fontWeight(.bold)
+                    Text("º\(unit)")
+                        .font(.system(size: 120))
+                        .fontWeight(.bold)
+                }
+                
+                Text(shortForecast)
+                    .font(.system(size: 32))
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.center)
+            }
+        }
+    }
+}
+#endif
 
 #Preview {
     RCWeatherWidgetSmall(temperature: 80, unit: "F", shortForecast: "Sunny")
