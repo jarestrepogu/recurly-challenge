@@ -73,6 +73,14 @@
 			);
 			target = F0837A832E4669BF008D6D85 /* WeatherWidgetExtension */;
 		};
+		F0DCB6672E4AB2040067E325 /* Exceptions for "RecurlyChallengeApp" folder in "WeatherWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/DataModels.swift,
+				ViewModel.swift,
+			);
+			target = F0837A832E4669BF008D6D85 /* WeatherWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -86,6 +94,9 @@
 		};
 		F096540F2E45360600A207BD /* RecurlyChallengeApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F0DCB6672E4AB2040067E325 /* Exceptions for "RecurlyChallengeApp" folder in "WeatherWidgetExtension" target */,
+			);
 			path = RecurlyChallengeApp;
 			sourceTree = "<group>";
 		};

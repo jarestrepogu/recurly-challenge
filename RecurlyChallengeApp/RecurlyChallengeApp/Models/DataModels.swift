@@ -53,6 +53,8 @@ struct Period: Codable {
 enum ShortForecast: String, Codable {
     case mostlyClear = "Mostly Clear"
     case sunny = "Sunny"
+    case partlyCloudy = "Partly Cloudy"
+    case mostlySunny = "Mostly Sunny"
 }
 
 enum TemperatureUnit: String, Codable {

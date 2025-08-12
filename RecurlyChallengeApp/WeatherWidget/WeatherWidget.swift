@@ -10,6 +10,7 @@ import SwiftUI
 import RCWeatherWidget
 
 struct Provider: TimelineProvider {
+    
     func placeholder(in context: Context) -> ForecastEntry {
         ForecastEntry(date: Date())
     }
@@ -21,43 +22,38 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [ForecastEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for dayOffset in 0 ..< 7 {
-            let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
-            let startOfDay = Calendar.current.startOfDay(for: entryDate)
-            let entry = ForecastEntry(date: startOfDay)
+        Task { @MainActor in
+            let viewModel = ViewModel()
+            await viewModel.loadPeriods()
+            let period = viewModel.periods.first
+            let entry = ForecastEntry(date: Date(), period: period)
             entries.append(entry)
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
-
-//    func relevances() async -> WidgetRelevances<Void> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
 }
 
 struct ForecastEntry: TimelineEntry {
     let date: Date
+    var period: Period?
 }
 
 struct WeatherWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
-    var entry: Provider.Entry
+    var entry: ForecastEntry
 
     var body: some View {
         switch family {
         case .systemSmall:
-            RCWeatherWidgetSmall(temperature: 80, unit: "F", shortForecast: "Sunny")
+            RCWeatherWidgetSmall(temperature: entry.period?.temperature ?? 0, unit: entry.period?.temperatureUnit.rawValue ?? "-", shortForecast: entry.period?.shortForecast.rawValue ?? "")
         case .systemMedium:
-            RCWeatherWidgetMedium(temperature: 80, unit: "F", shortForecast: "Sunny")
+            RCWeatherWidgetMedium(temperature: entry.period?.temperature ?? 0, unit: entry.period?.temperatureUnit.rawValue ?? "-", shortForecast: entry.period?.shortForecast.rawValue ?? "")
         case .systemLarge:
-            RCWeatherWidgetLarge(temperature: 80, unit: "F", shortForecast: "Sunny")
+            RCWeatherWidgetLarge(temperature: entry.period?.temperature ?? 0, unit: entry.period?.temperatureUnit.rawValue ?? "-", shortForecast: entry.period?.shortForecast.rawValue ?? "")
         default:
-            RCWeatherWidgetMedium(temperature: 80, unit: "F", shortForecast: "Sunny")
+            RCWeatherWidgetMedium(temperature: entry.period?.temperature ?? 0, unit: entry.period?.temperatureUnit.rawValue ?? "-", shortForecast: entry.period?.shortForecast.rawValue ?? "")
         }
     }
 }
